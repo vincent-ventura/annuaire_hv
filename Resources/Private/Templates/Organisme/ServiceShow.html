@@ -13,9 +13,10 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>{organisme.raisonsociale}</h1>
+<h1>{service.libelle}</h1>
 
 <f:flashMessages />
-<f:render partial="Organisme/Properties" arguments="{organisme:organisme}" />
-<f:link.action action="list">Retour à la liste</f:link.action><br />
+<f:render partial="Service/Properties" arguments="{service:service}" />
+<f:link.action action="serviceList" arguments="{service: service, organisme: organisme}">Retour à la liste</f:link.action><br />
+<!-- <f:link.action action="new">New Service</f:link.action> -->
 </f:section>

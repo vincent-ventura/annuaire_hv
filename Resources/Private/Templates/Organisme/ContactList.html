@@ -13,11 +13,11 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Listing for Contact</h1>
+<h1>Liste des Contacts</h1>
 
 <f:flashMessages />
 
-<table  class="tx_annuairehv" >
+<table class="tx_annuairehv" >
 	<tr>
 		<th><f:translate key="tx_annuairehv_domain_model_contact.nom" /></th>
 		<th><f:translate key="tx_annuairehv_domain_model_contact.prenom" /></th>
@@ -42,7 +42,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.cp}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.ville}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.photo.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.presentation}</f:link.action></td>
+			<td><f:link.action action="serviceList" arguments="{organisme : contact.organisme}"> {contact.service.libelle}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{contact : contact}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{contact : contact}">Delete</f:link.action></td>
 		</tr>

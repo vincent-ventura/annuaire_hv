@@ -1,0 +1,41 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Liste des Services</h1>
+
+<f:flashMessages />
+
+<table class="tx_annuairehv" >
+	<tr>
+		<th><f:translate key="tx_annuairehv_domain_model_service.libelle" /></th>
+		<th><f:translate key="tx_annuairehv_domain_model_service.batiment" /></th>
+		<th><f:translate key="tx_annuairehv_domain_model_service.bureau" /></th>
+		<th><f:translate key="tx_annuairehv_domain_model_service.tel" /></th>
+		<th><f:translate key="tx_annuairehv_domain_model_service.horaires" /></th>
+	</tr>
+
+	<f:for each="{services}" as="service">
+		<tr>
+			<td><f:link.action action="serviceShow" arguments="{service: service, organisme: organisme}"> {service.libelle}</f:link.action></td>
+			<td><f:link.action action="serviceShow" arguments="{service: service, organisme: organisme}"> {service.batiment}</f:link.action></td>
+			<td><f:link.action action="serviceShow" arguments="{service: service, organisme: organisme}"> {service.bureau}</f:link.action></td>
+			<td><f:link.action action="serviceShow" arguments="{service: service, organisme: organisme}"> {service.tel}</f:link.action></td>
+			<td><f:link.action action="serviceShow" arguments="{service: service, organisme: organisme}"> {service.horaires}</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<!-- <f:link.action action="new">New service</f:link.action> -->
+</f:section>

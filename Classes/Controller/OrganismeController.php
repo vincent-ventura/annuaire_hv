@@ -87,9 +87,16 @@ class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      *
      * @return void
      */
-    public function serviceListAction()
-    {
-        
+    public function serviceListAction(\HV\AnnuaireHv\Domain\Model\Organisme $organisme) {
+        $contacts = $this->contactRepository->findByOrganisme($organisme);
+        $services = [];
+
+        foreach($contacts as $contact) {
+            $service = $contact->getService();
+            array_push($services, $service);
+        }
+
+        $this->view->assignMultiple(array('services'=> $services, 'organisme' => $organisme));
     }
     
     /**
@@ -97,9 +104,9 @@ class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      *
      * @return void
      */
-    public function serviceShowAction()
+    public function serviceShowAction(\HV\AnnuaireHv\Domain\Model\Service $service, \HV\AnnuaireHv\Domain\Model\Organisme $organisme)
     {
-        
+        $this->view->assignMultiple(array('service'=> $service, 'organisme' => $organisme));
     }
 
 }
