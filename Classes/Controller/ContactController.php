@@ -46,9 +46,14 @@ class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      *
      * @return void
      */
-    public function listAction()
+    public function listAction(\HV\AnnuaireHv\Search $search=null)
     {
-        $contacts = $this->contactRepository->findAll();
+        //var_dump($search->getKeyword());
+        if ($search == NULL)
+            $contacts = $this->contactRepository->findAll();
+        else
+            $contacts = $this->contactRepository->findByKeyword($search->getKeyword());
+
         $this->view->assign('contacts', $contacts);
     }
     
@@ -70,7 +75,7 @@ class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function searchAction()
     {
-        
+
     }
 
 }

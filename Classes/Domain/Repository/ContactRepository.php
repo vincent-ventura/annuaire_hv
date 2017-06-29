@@ -40,4 +40,16 @@ class ContactRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         'sorting' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
     );
 
+    public function findByKeyword($keyword) {
+        $query = $this->createQuery();
+        $query->matching(
+            $query->logicalOr(
+                $query->like('nom', "%".$keyword."%"),
+                $query->like('prenom', "%".$keyword."%"),
+                $query->like('presentation', "%".$keyword."%")
+            )
+        );
+        return $query->execute();
+    }
+
 }
