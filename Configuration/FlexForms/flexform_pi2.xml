@@ -21,6 +21,27 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+					<settings.listPage>
+						<TCEforms>
+							<label>LLL:EXT:lang/locallang_general.xlf:LGL.startingpoint</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>1</minitems>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+										<default>
+											<searchWholePhrase>1</searchWholePhrase>
+										</default>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.listPage>
 				</el>
 			</ROOT>
 		</sDEF>

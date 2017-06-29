@@ -1,0 +1,11 @@
+<f:layout name="Default" xmlns:f="http://www.w3.org/1999/html"/>
+
+<f:section name="main">
+    <h1>Search a contact</h1>
+
+    <f:form pageUid="{settings.listPage}" pluginName="pi1" action="list" object="{search}" objectName="search" >
+        <f:form.textfield placeholder="keyword" property="keyword" />
+        <f:form.submit value="Search" />
+    </f:form>
+
+</f:section>
