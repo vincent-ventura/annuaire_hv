@@ -50,4 +50,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </table>
 
 <f:link.action action="new">New Contact</f:link.action>
+
+<f:form action="list" object="{search}" objectName="search" >
+	<f:form.textfield placeholder="keyword" property="keyword" />
+	<f:form.submit value="Search" />
+</f:form>
+
 </f:section>
