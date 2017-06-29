@@ -60,6 +60,7 @@ class ContactController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function showAction(\HV\AnnuaireHv\Domain\Model\Contact $contact)
     {
+        // die($contact->getOrganisme());
         $this->view->assign('contact', $contact);
     }
     

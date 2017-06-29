@@ -13,11 +13,11 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Listing for Organisme</h1>
+<h1>Liste des Organismes</h1>
 
 <f:flashMessages />
 
-<table  class="tx_annuairehv" >
+<table class="tx_annuairehv" >
 	<tr>
 		<th><f:translate key="tx_annuairehv_domain_model_organisme.raisonsociale" /></th>
 		<th><f:translate key="tx_annuairehv_domain_model_organisme.adresse" /></th>
@@ -47,11 +47,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{organisme : organisme}"> {organisme.siret}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{organisme : organisme}"> {organisme.logo.originalResource.name}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{organisme : organisme}"> {organisme.horaires}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{organisme : organisme}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{organisme : organisme}">Delete</f:link.action></td>
+			<td><f:link.action action="contactList" arguments="{organisme : organisme}">Lister les contacts</f:link.action></td>
+			<!-- <td><f:link.action action="delete" arguments="{organisme : organisme}">Delete</f:link.action></td> -->
 		</tr>
 	</f:for>
 </table>
 
-<f:link.action action="new">New Organisme</f:link.action>
+<!-- <f:link.action action="new">New Organisme</f:link.action> -->
 </f:section>
