@@ -52,4 +52,11 @@ class ContactRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
 
+    public function findByOrganisme(\HV\AnnuaireHv\Domain\Model\Organisme $organisme) {
+    	$query = $this->createQuery();
+    	$query->matching($query->equals('organisme', $organisme));
+
+    	return $query->execute();
+    }
+
 }

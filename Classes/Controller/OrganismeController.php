@@ -40,7 +40,15 @@ class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      * @inject
      */
     protected $organismeRepository = NULL;
-    
+
+    /**
+     * contactRepository
+     *
+     * @var \HV\AnnuaireHv\Domain\Repository\ContactRepository
+     * @inject
+     */
+    protected $contactRepository = NULL;
+
     /**
      * action list
      *
@@ -68,9 +76,10 @@ class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      *
      * @return void
      */
-    public function contactListAction()
+    public function contactListAction(\HV\AnnuaireHv\Domain\Model\Organisme $organisme)
     {
-        
+        $contacts = $this->contactRepository->findByOrganisme($organisme);
+        $this->view->assign('contacts', $contacts);
     }
     
     /**
