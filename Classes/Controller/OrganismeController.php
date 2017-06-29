@@ -79,7 +79,7 @@ class OrganismeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     public function contactListAction(\HV\AnnuaireHv\Domain\Model\Organisme $organisme)
     {
         $contacts = $this->contactRepository->findByOrganisme($organisme);
-        $this->view->assign('contacts', $contacts);
+        $this->view->assignMultiple(array('contacts'=>$contacts, 'raisonsociale'=>$organisme->getRaisonsociale()));
     }
     
     /**

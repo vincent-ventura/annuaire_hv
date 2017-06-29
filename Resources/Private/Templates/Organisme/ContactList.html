@@ -13,7 +13,7 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Liste des Contacts</h1>
+<h1>Liste des Contacts de {raisonsociale}</h1>
 
 <f:flashMessages />
 
@@ -27,9 +27,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<th><f:translate key="tx_annuairehv_domain_model_contact.cp" /></th>
 		<th><f:translate key="tx_annuairehv_domain_model_contact.ville" /></th>
 		<th><f:translate key="tx_annuairehv_domain_model_contact.photo" /></th>
-		<th><f:translate key="tx_annuairehv_domain_model_contact.presentation" /></th>
-		<th> </th>
-		<th> </th>
+		<th><f:translate key="tx_annuairehv_domain_model_contact.service" /></th>
 	</tr>
 
 	<f:for each="{contacts}" as="contact">
@@ -43,11 +41,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.ville}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{contact : contact}"> {contact.photo.originalResource.name}</f:link.action></td>
 			<td><f:link.action action="serviceList" arguments="{organisme : contact.organisme}"> {contact.service.libelle}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{contact : contact}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{contact : contact}">Delete</f:link.action></td>
 		</tr>
 	</f:for>
 </table>
 
-<f:link.action action="new">New Contact</f:link.action>
 </f:section>
